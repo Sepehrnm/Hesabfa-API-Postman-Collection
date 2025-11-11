@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a7d47a73-aabb-4a76-bfd2-f04531892ea3",
+		"_postman_id": "e83f7515-6b18-465b-8179-5081cc66108a",
 		"name": "Hesabfa API documents",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15757217"
 	},
 	"item": [
 		{
@@ -34,6 +35,37 @@
 								"v1",
 								"contact",
 								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPhoneOrEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"f6Kzr8NNPTqb3WEYgZpL8YUQ60hEOgzE\",\r\n    \"loginToken\": \"b55cc107d675735afbb2afc02ee70d3f4e94d1152e2d5d3392aa89e3098b8ec2cda79e6d8ab0626fcdba8969104b4f28\",\r\n    \"mobile\": \"09163199271\",\r\n    \"phone\": \"09163199271\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/contact/findByPhoneOrEmail",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contact",
+								"findByPhoneOrEmail"
 							]
 						}
 					},
@@ -77,7 +109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n}",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"queryInfo\": \r\n    {\r\n        \"SortBy\": \"Code\",\r\n        \"SortAsce\": true,\r\n        \"Take\": 999999999,\r\n        \"Skip\": 0,\r\n        \"filters\": [\r\n            {\r\n                \"property\": \"Code\",\r\n                \"operator\": \"*\",\r\n                \"value\": \"20\"\r\n            }\r\n        ]\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,7 +140,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    contact: {                \r\n        Code: '0001',\r\n        Name: 'شرکت توحید',\r\n        FirstName: 'محمد',\r\n        LastName: 'محمدی',\r\n        ContactType: 2,\r\n        NodeFamily: 'اشخاص:اشخاص حقوقی:سازمان ها'\r\n    }\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    contact: {                \r\n        // Code: '0001',\r\n        Name: 'شرکت توحید',\r\n        FirstName: 'محمد',\r\n        LastName: 'محمدی',\r\n        ContactType: 2,\r\n        NodeFamily: 'اشخاص:اشخاص حقوقی:سازمان ها',\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +269,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    code: '000001'\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    code: '105'\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -330,7 +362,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    queryInfo:{\r\n\t\tSortBy: 'Code',\r\n\t\tSortDesc: true,\r\n\t\tTake: 20,\r\n\t\tSkip: 0,\r\n\t\tFilters:[{\r\n\t\t\tProperty: 'Name',\r\n\t\t\tOperator: '*',\r\n\t\t\tValue: 'Galaxy'\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    queryInfo:{\r\n\t\tSortBy: 'Code',\r\n\t\tSortDesc: false,\r\n\t\tTake: 100,\r\n\t\tSkip: 0,\r\n\t\tFilters:[{\r\n\t\t\tProperty: 'ItemType',\r\n\t\t\tOperator: '=',\r\n\t\t\tValue: '0'\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -361,7 +393,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    item:{                \r\n\t\tName: 'Galaxy J7 گوشی موبایل',\r\n\t\tBarcode: '345345345345',\r\n\t\tItemType: 0,\r\n\t\tUnit: 'عدد',\r\n\t\tBuyPrice: 500000,\r\n\t\tSellPrice: 550000,\r\n\t\tPurchasesTitle: 'Samsung Galaxy J7',\r\n\t\tSalesTitle: 'Samsung Galaxy J7',\r\n\t\tTag: '',\r\n\t\tDescription: '',\r\n\t\tProductCode: '45612',\r\n\t\tActive: true,\r\n\t\tNodeFamily: 'کالاها : موبایل : سامسونگ'\r\n\t}\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    item:{                \r\n\t\tName: 'Galaxy J7 گوشی موبایل',\r\n\t\tBarcode: '',\r\n\t\tItemType: 0,\r\n\t\tUnit: 'عدد',\r\n\t\tBuyPrice: 500000,\r\n\t\tSellPrice: 550000,\r\n\t\tPurchasesTitle: 'Samsung Galaxy J7',\r\n\t\tSalesTitle: 'Samsung Galaxy J7',\r\n\t\tTag: '',\r\n\t\tDescription: '',\r\n\t\tProductCode: '45612',\r\n\t\tActive: true,\r\n\t\tNodeFamily: 'کالاها : موبایل : سامسونگ'\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -392,7 +424,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    items:[{                \r\n\t\tCode: '000001',\r\n\t\tName: 'Galaxy J7 گوشی موبایل',\r\n\t\tBarcode: '345345345345',\r\n\t\tItemType: 0,\r\n\t\tUnit: 'عدد',\r\n\t\tBuyPrice: 500000,\r\n\t\tSellPrice: 550000,\r\n\t\tPurchasesTitle: 'Samsung Galaxy J7',\r\n\t\tSalesTitle: 'Samsung Galaxy J7',\r\n\t\tTag: '',\r\n\t\tDescription: '',\r\n\t\tProductCode: '75134',\r\n\t\tActive: '',\r\n\t\tNodeFamily: 'کالاها : موبایل : سامسونگ'\r\n\t}, {\r\n\t\tName: 'Galaxy S7 گوشی موبایل',\r\n\t\tItemType: 0,\r\n\t}]\r\n}",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"items\": [\r\n        {\r\n            \"Code\": null,\r\n            \"Name\": \"دستکش موتور سیکلت سواری محافظ دار\",\r\n            \"ItemType\": 0,\r\n            \"Tag\": \"{'id_product':'51679','id_attribute':0}\",\r\n            \"PurchasesTitle\": \"دستکش موتور سیکلت سواری محافظ دار\",\r\n            \"SalesTitle\": \"دستکش موتور سیکلت سواری محافظ دار\",\r\n            \"SellPrice\": null,\r\n            \"Barcode\": null,\r\n            \"NodeFamily\": \"products: لوازم مصرفی موتور سیکلت\",\r\n            \"ProductCode\": \"51679\"\r\n        }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -485,7 +517,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    items: [{\r\n\t\tCode: \"000001\",\r\n\t\tQuantity: 3,\r\n\t\tUnitPrice: 250000,\r\n\t\tWarehouseCode: 12\r\n\t}, {\r\n\t\tCode: \"000002\",\r\n\t\tQuantity: 5,\r\n\t\tUnitPrice: 378000\r\n\t}]\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    items: [\r\n        {\r\n            Code: \"171\",\r\n            Quantity: 60,\r\n            UnitPrice: 3000\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -508,6 +540,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetQuantity2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"codes\": [\"000005\", \"000006\"]\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/item/GetQuantity2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"item",
+								"GetQuantity2"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -521,7 +584,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n        invoice:{\r\n       Number: '1001',\r\n       Reference: '',\r\n       Date: '2023-07-17 17:30:12',\r\n       DueDate: '2023-07-17 17:30:12',\r\n       ContactCode: '000001',\r\n       ContactTitle: 'سعید محمدی',\r\n       Note: '',\r\n       Sent: false,\r\n       InvoiceType: 0,\r\n       Status: 2,\r\n       Tag: '',\r\n       Freight: 0,\r\n       WarehouseReceiptStatus: 1,\r\n       Project: 'پروژه یک',\r\n       SalesmanCode: 10001,\r\n       SalesmanPercent: 30,\r\n       Currency: 'IRR',\r\n       InvoiceItems: [{\r\n           RowNumber: 1,\r\n           Description: 'Galaxy J7 گوشی سامسونگ',\r\n           ItemCode: '000001',\r\n           Unit: 'عدد',\r\n           Quantity: 1,\r\n           UnitPrice: 100000,\r\n           Discount: 0,\r\n           Tax: 9000\r\n       }],\r\n     Others : [\r\n        {\r\n           \"Title\": \"هزینه های گمرکی\",\r\n           \"Amount\": 1540000.0,\r\n           \"Add\": true \r\n        }\r\n    ],\r\n     Currency: \"IRR\",\r\n     CurrencyRate: 1.0000000000\r\n   }\r\n}",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"invoice\": {\r\n        \"Number\": \"\",\r\n        \"InvoiceType\": 0,\r\n        \"ContactCode\": \"020143\",\r\n        \"Date\": \"2025-05-13 12:16:54\",\r\n        \"DueDate\": \"2025-05-13 12:16:54\",\r\n        \"Reference\": \"130392\",\r\n        \"Status\": 2,\r\n        \"InvoiceItems\": [\r\n        {\r\n            \"ItemCode\": \"4408\",\r\n            \"Description\": \"گوشی سامسونگ A16 با رم 4GB و حافظه داخلی 128GB (ویتنام)\",\r\n            \"Quantity\": 1,\r\n            \"UnitPrice\": 99536360,\r\n            \"Discount\": 0,\r\n            \"Tax\": 9953640\r\n        },\r\n        {\r\n            \"ItemCode\": \"4827\",\r\n            \"Description\": \"گوشی سامسونگ A26 با رم 6GB و حافظه داخلی 128GB ویتنام\",\r\n            \"Quantity\": 1,\r\n            \"UnitPrice\": 180881810,\r\n            \"Discount\": 0,\r\n            \"Tax\": 18088180\r\n        },\r\n        {\r\n            \"ItemCode\": \"4808\",\r\n            \"Description\": \"گوشی سامسونگ A36 5G با رم 8GB و حافظه داخلی 256GB (ویتنام)\",\r\n            \"Quantity\": 1,\r\n            \"UnitPrice\": 253627270,\r\n            \"Discount\": 0,\r\n            \"Tax\": 25362730\r\n        },\r\n        {\r\n            \"ItemCode\": \"4779\",\r\n            \"Description\": \"گوشی سامسونگ A56 5G با رم 8GB و حافظه داخلی 256GB (ویتنام)\",\r\n            \"Quantity\": 1,\r\n            \"UnitPrice\": 295445450,\r\n            \"Discount\": 0,\r\n            \"Tax\": 29544550\r\n        }\r\n        ],\r\n        \"Note\": \"روش حمل و نقل: ماهکس | پس کرایه\",\r\n        \"Freight\": 0\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -540,6 +603,68 @@
 								"v1",
 								"invoice",
 								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePaidStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"number\": 1001,\r\n    \"type\": 0,\r\n    \"paid\": true \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/invoice/changePaidStatus",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"invoice",
+								"changePaidStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeSentStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"number\": 1001,\r\n    \"type\": 0,\r\n    \"sent\": true \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/invoice/changeSentStatus",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"invoice",
+								"changeSentStatus"
 							]
 						}
 					},
@@ -614,7 +739,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    type: 0,\r\n  \tqueryInfo:{\r\n\t\tSortBy: 'Date',\r\n\t\tSortDesc: true,\r\n\t\tTake: 20,\r\n\t\tSkip: 0\r\n\t}\r\n}",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"type\": 0,\r\n  \t\"queryInfo\":{\r\n\t\t\"sortBy\": \"Number\",\r\n\t\t\"sortDesc\": true,\r\n\t\t\"take\": 12000,\r\n\t\t\"skip\": 0,\r\n        \"Filters\": [\r\n        {\r\n            \"property\": \"Reference\", \"operator\": \"=\", \"value\": \"152\"\r\n        },\r\n        {\r\n            \"property\": \"Status\", \"operator\": \"=\", \"value\": \"0\"\r\n        }\r\n        ]\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -799,6 +924,37 @@
 					"response": []
 				},
 				{
+					"name": "GetById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    type: 1,\r\n    \"id\": 123,\r\n    \"idList\": [123, 124]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/receipt/GetById",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"receipt",
+								"GetById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetReceipts",
 					"request": {
 						"method": "POST",
@@ -886,6 +1042,37 @@
 								"v1",
 								"receipt",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    type: 4,\r\n    description: \"رسید هزینه آبان ماه\",\r\n    currency: \"IRR\",\r\n    currencyRate: 1,\r\n    dateTime: \"2024-07-23\",\r\n    project: \"\",\r\n    items: [\r\n        {\r\n            account: \"هزینه ها: هزینه های عملیاتی: هزینه ملزومات مصرفی\",\r\n            amount: 3200000\r\n        }\r\n    ],\r\n    transactions: [\r\n        {\r\n            bankCode: 1,\r\n            amount: 2000000,\r\n            reference: \"8900546\",\r\n            transactionFee: 250\r\n        },\r\n        {\r\n            Check: {\r\n                number: \"5470098\",\r\n                amount: 1200000,\r\n                sayyad: \"872000545448792\",\r\n                bankName: \"تجارت\",\r\n                payerCode: 2\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/receipt/save2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"receipt",
+								"save2"
 							]
 						}
 					},
@@ -1094,7 +1281,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1342,7 +1529,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n}",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1551,6 +1738,99 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetDefaultPriceList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/setting/getDefaultPriceList",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"setting",
+								"getDefaultPriceList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetChangeHook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/setting/GetChangeHook",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"setting",
+								"GetChangeHook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetChangeHook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n\t\"url\": \"https://9ng7vhsb-44363.euw.devtunnels.ms/api/HesabfaHook/GetData\",\r\n\t\"hookPassword\": \"1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/setting/SetChangeHook",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"setting",
+								"SetChangeHook"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1651,6 +1931,130 @@
 					"response": []
 				},
 				{
+					"name": "Bank",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"startDate\": \"2023-01-01T00:00:00Z\", \r\n    \"endDate\": \"2024-01-01T00:00:00Z\",  \r\n    \"project\": \"پروژه یک\",\r\n    \"code\": 1   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/report/bank",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"report",
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"startDate\": \"2023-01-01T00:00:00Z\", \r\n    \"endDate\": \"2024-01-01T00:00:00Z\",  \r\n    \"project\": \"پروژه یک\",\r\n    \"code\": 4     \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/report/cash",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"report",
+								"cash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PettyCash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"startDate\": \"2023-01-01T00:00:00Z\", \r\n    \"endDate\": \"2024-01-01T00:00:00Z\",  \r\n    \"project\": \"پروژه یک\",\r\n    \"code\": 5 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/report/pettyCash",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"report",
+								"pettyCash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Journal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"startDate\": \"2016-01-01T00:00:00Z\", \r\n    \"endDate\": \"2024-01-01T00:00:00Z\",  \r\n    \"project\": \"پروژه یک\",\r\n    \"take\": 10,\r\n    \"skip\": 20    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/report/journal",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"report",
+								"journal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Profitandlossstatement",
 					"request": {
 						"method": "POST",
@@ -1744,6 +2148,801 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"apiKey\": \"{{apiKey}}\",\r\n     \"loginToken\": \"{{loginToken}}\",\r\n     \"number\": 1001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/warehouse/get",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"warehouse",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"id\": 1,\r\n    \"idList\": [1, 5]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/warehouse/GetById",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"warehouse",
+								"GetById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReceipts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"type\": 1,\r\n    \"queryInfo\":{\r\n        \"SortBy\": \"Date\",\r\n        \"SortDesc\": true,\r\n        \"Take\": 20,\r\n        \"Skip\": 0\r\n    }\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/warehouse/GetReceipts",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"warehouse",
+								"GetReceipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    deleteOldReceipts: true,\r\n    receipt: {\r\n\t\tWarehouseCode: 11,\r\n        DestinationWarehouseCode: 12,\r\n\t\tInvoiceNumber: 1001,\r\n\t\tInvoiceType: 0,\r\n\t\tDate: '2023-07-17',\r\n\t\tNotes: '',\r\n\t\tFreight: 0,\r\n\t\tDelivery: '',\r\n\t\tProject: 'پروژه فروشگاه آنلاین',\r\n\t\tItems: [\r\n            {\r\n                ItemCode: 1068,\r\n                Quantity: 1,\r\n                Reference: 'PQ-1224',\r\n                Notes: ''\r\n            },\r\n            {\r\n                ItemCode: 10680,\r\n                Quantity: 2,\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/warehouse/save",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"warehouse",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiKey\": \"{{apiKey}}\",\r\n    \"loginToken\": \"{{loginToken}}\",\r\n    \"number\": 1001,\r\n    \"type\": 0\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/warehouse/delete",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"warehouse",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DiscountItem",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    contactCode: '000001',\r\n    productCode: '',\r\n    contactPath: '',\r\n    tag: '' \r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/get",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    idList: [1]\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/getById",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetItems",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    idList: [1]\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/getById",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n     \"item\": {\r\n        \"id\": 2,\r\n        \"title\": \"تخفیف عمومی همه کالاها\",\r\n        \"type\": 1,\r\n        \"percent\": 5,\r\n        \"amount\": 20000,\r\n        \"validFrom\": \"2025-01-01\",\r\n        \"validTo\": \"2025-10-01\",\r\n        \"tag\": \"\"\r\n    }\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/save",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BatchSave",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n     \"items\": [{\r\n        \"id\": 1,\r\n        \"title\": \"تخفیف عمومی همه کالاها\",\r\n        \"type\": 1,\r\n        \"percent\": 5,\r\n        \"amount\": 20000,\r\n        \"validFrom\": \"2025-01-01\",\r\n        \"validTo\": \"2025-10-01\",\r\n        \"tag\": \"-\"\r\n        },\r\n        {\r\n        \"id\": 2,\r\n        \"title\": \"تخفیف مشتریان وفادار\",\r\n        \"type\": 6,\r\n        \"percent\": 20,\r\n        \"amount\": 100000,\r\n        \"contactPath\": \"اشخاص : مشتریان وفادار\",\r\n        \"validFrom\": \"2025-01-01\",\r\n        \"validTo\": \"2025-10-01\",\r\n        \"tag\": \"-\"\r\n        }\r\n    ]\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/batchsave",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"batchsave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"idList\": [1, 2]\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/discountitem/delete",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"discountitem",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankTransfer",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"number\": \"1002\"  \r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/banktransfer/get",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"banktransfer",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n        \"queryInfo\": {\r\n        \"filters\": [\r\n            {\r\n                    // \"property\": \"FromBank\",\r\n                    // \"operator\": \"=\",\r\n                    // \"value\": \"0003\"\r\n            }\r\n        ]\r\n    } \r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/banktransfer/getTransfers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"banktransfer",
+								"getTransfers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"transfer\": {\r\n        \"number\": 1016,\r\n        \"description\": \"انتقال وجه از بانک ملی به بانک دبی\",\r\n        \"date\": \"2024-07-17T00:00:00\",\r\n        \"project\": \"پروژه یک\",\r\n        \"fromAmount\": 581000000.0000,\r\n        \"toAmount\": 100,\r\n        \"fromReference\": \"58745\",\r\n        \"toReference\": \"AS-85/54\",\r\n        \"fromBank\": \"0003\",\r\n        \"fromCash\": \"\",\r\n        \"fromPettyCash\": \"\",\r\n        \"toBank\": \"0007\",\r\n        \"toCash\": \"\",\r\n        \"toPettyCash\": \"\",\r\n        \"fromTransactionFee\": 35000,\r\n        \"toTransactionFee\": 2,\r\n        \"fromCurrencyRate\": 1,\r\n        \"toCurrencyRate\": 581000\r\n    }\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/banktransfer/save",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"banktransfer",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"number\": \"1016\"  \r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/banktransfer/delete",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"banktransfer",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inquiry",
+			"item": [
+				{
+					"name": "Credit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/credit",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NationalIdentity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"nationalCode\": \"1234567890\",  \r\n    \"birthDate\": \"1999-01-01\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/nationalIdentity",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"nationalIdentity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckMobileAndNationalCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"nationalCode\": \"1234567890\",  \r\n    \"mobile\": \"09123456789\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/checkMobileAndNationalCode",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"checkMobileAndNationalCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckCardAndNationalCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"nationalCode\": \"1234567890\",  \r\n    \"cardNumber\": \"6199999999999999\",\r\n    \"birthDate\": \"1999-01-01\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/checkCardAndNationalCode",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"checkCardAndNationalCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckIbanAndNationalCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"nationalCode\": \"1234567890\",\r\n    \"birthDate\": \"1999-01-01\"\t \r\n    \"iban\": \"IR910100010000001234567890\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/checkIbanAndNationalCode",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"checkIbanAndNationalCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Iban",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"iban\": \"IR910100010000001234567890\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/iban",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"iban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"cardNumber\": \"6199999999999999\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/card",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CardToIban",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"cardNumber\": \"6199999999999999\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/cardToIban",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"cardToIban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AccountToIBAN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"account\": \"6199999999999999\",\r\n    \"bank\": \"012\"\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/accountToIBAN",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"accountToIBAN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostalCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    apiKey: \"{{apiKey}}\",\r\n    loginToken: \"{{loginToken}}\",\r\n    \"postalCode\": \"6199999999999999\"  \r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.hesabfa.com/v1/inquiry/postalCode",
+							"protocol": "https",
+							"host": [
+								"api",
+								"hesabfa",
+								"com"
+							],
+							"path": [
+								"v1",
+								"inquiry",
+								"postalCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -1751,6 +2950,7 @@
 			"listen": "prerequest",
 			"script": {
 				"type": "text/javascript",
+				"requests": {},
 				"exec": [
 					""
 				]
@@ -1760,6 +2960,7 @@
 			"listen": "test",
 			"script": {
 				"type": "text/javascript",
+				"requests": {},
 				"exec": [
 					""
 				]
@@ -1769,13 +2970,11 @@
 	"variable": [
 		{
 			"key": "apiKey",
-			"value": "",
-			"type": "default"
+			"value": ""
 		},
 		{
 			"key": "loginToken",
-			"value": "",
-			"type": "default"
+			"value": ""
 		}
 	]
 }
